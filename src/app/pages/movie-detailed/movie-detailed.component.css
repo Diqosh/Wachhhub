@@ -68,3 +68,21 @@
 .movie-poster p {
     color: black;
 }
+
+.movie-poster__image__list {
+    position: relative;
+}
+
+.movie-poster__image__heart {
+    position: absolute;
+    font-size: 80px;
+    color: gray;
+    left: 16px;
+    top: -32px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.isFavourite {
+    color: #dc3545;
+}
