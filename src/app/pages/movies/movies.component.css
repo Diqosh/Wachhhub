@@ -1,105 +1,105 @@
 /* Styles for the movie list */
 .movie-list {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-  gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
 }
 
 .movie-item {
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 10px;
-  padding: 10px;
-  cursor: pointer;
-  transition: transform 0.2s;
-  background-color: #fff;
-  color: #000;
-  width: 250px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background-color: #fff;
+    color: #000;
+    width: 250px;
 }
 
 .movie-item:hover {
-  transform: scale(1.03);
+    transform: scale(1.03);
 }
 
 .movie-poster {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-  color: white;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    color: white;
 }
 
 .movie-details {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 /* Styles for movie details */
 .movie-details h2 {
-  font-size: 18px;
-  margin: 5px 0;
+    font-size: 18px;
+    margin: 5px 0;
 }
 
 .movie-details p {
-  font-size: 14px;
-  margin: 3px 0;
+    font-size: 14px;
+    margin: 3px 0;
 }
 
 /* Load More Button */
 .load-more-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
 }
 
 .load-more-button:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
 }
 
 /* Media query for responsive design (adjust as needed) */
 @media (max-width: 768px) {
-  .movie-item {
-    width: 100%;
-  }
+    .movie-item {
+        width: 100%;
+    }
 }
 
 .search-container {
-  margin-top: 50px;
-  margin-bottom: 100px;
-  display: flex;
-  justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
 }
 
 .search-container button {
-  background-color: rgb(230, 35, 35);
-  border-radius: 5px;
-  margin-left: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+    background-color: rgb(230, 35, 35);
+    border-radius: 5px;
+    margin-left: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
 
 .search-input {
-  width: 50%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  color: #000;
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #000;
 }
 
 .search-input:focus {
-  outline: none;
-  border-color: #007bff;
+    outline: none;
+    border-color: #007bff;
 }
 
 .movie-item img {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
 }

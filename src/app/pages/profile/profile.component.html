@@ -1,0 +1,26 @@
+<div style="height: 80vh;
+ display: flex;
+  justify-content: center;
+   align-items: center;
+">
+  <div>
+    <div style="display: flex; flex-direction: column; gap: 30px">
+  <div
+  style="
+width: 200px;
+height: 200px;
+border-radius: 100px;
+background-color: #303030;
+display: flex;
+align-items: center;
+justify-content: center;
+">
+  </div>
+    <nz-input-group [nzSuffix]="suffixTemplateInfo" [nzPrefix]="prefixTemplateUser">
+      <input type="text" nz-input placeholder="username" [(ngModel)]="userName" style="text-align: center"/>
+    </nz-input-group>
+      <button nz-button nzType="primary" (click)="updateUsername()">Save</button>
+
+    </div>
+  </div>
+</div>
