@@ -1,5 +1,10 @@
 <div>
-    <div class="comment-container">
+    <div *ngIf="(comments?.length || 0) > 0" (click)="scrollToElement(target)" class="comment_link__arrow" [class.hidden]="hideCommentArrow"> 
+        <span>↓</span>
+        <span>Go to comments</span>
+    </div>
+
+    <div class="comment-container" #target>
         <textarea
             [(ngModel)]="commentInput"
             class="comment-container__input"

@@ -83,3 +83,28 @@
     font-size: 12px;
     color: #d1004b;
 }
+
+.comment_link__arrow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0px 24px;
+    background-color: #d1004b;
+    border-radius: 48px;
+    cursor: pointer;
+
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease;
+}
+
+.comment_link__arrow span:first-child {
+    font-size: 32px;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
