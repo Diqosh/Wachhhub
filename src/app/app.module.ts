@@ -32,6 +32,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { MoviesComponent } from './pages/movies/movies.component';
 import { MyListComponent } from './pages/my-list/my-list.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 registerLocaleData(en);
 
@@ -52,6 +53,7 @@ registerLocaleData(en);
         MoviesComponent,
         MyListComponent,
         ProfileComponent,
+        CommentsComponent,
     ],
     imports: [
         BrowserModule,

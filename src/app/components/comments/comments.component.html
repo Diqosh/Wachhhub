@@ -1,0 +1,33 @@
+<div>
+    <div class="comment-container">
+        <textarea
+            [(ngModel)]="commentInput"
+            class="comment-container__input"
+            placeholder="Now you can leave comment"
+        ></textarea>
+        <div class="comment-container__buttons">
+            <button [disabled]="!commentInput" (click)="clearComment()">Cancel</button>
+            <button [disabled]="!commentInput" (click)="leaveComment()">Publish</button>
+        </div>
+    </div>
+
+    <div class="comment-list">
+        <h3 style="color: #fff">{{ comments?.length || 0 }} comments</h3>
+
+        <div class="comment-list__comment" *ngFor="let comment of comments">
+            <div class="comment-list__comment__body">
+                <span class="comment-list__author">@{{ comment.author }}</span>
+                <span>
+                    {{ comment.body }}
+                </span>
+            </div>
+
+            <span
+                *ngIf="authorNickname === comment.author"
+                class="comment-list__comment__delete"
+                (click)="deleteComment(comment.id)"
+                >Delete</span
+            >
+        </div>
+    </div>
+</div>
