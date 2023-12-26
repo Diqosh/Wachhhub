@@ -49,17 +49,51 @@ export class MovieService {
             console.error(error);
             throw error;
         }
+    }
 
-        // return new Observable((observer) => {
-        //   axios
-        //     .request(options)
-        //     .then((response) => {
-        //       observer.next(response.data);
-        //       observer.complete();
-        //     })
-        //     .catch((error) => {
-        //       observer.error(error);
-        //     });
-        // });
+    async getMovieComments(movieId: string) {
+        const options = {
+            method: 'GET',
+            url: `https://json-api-diqosh-cf992770784d.herokuapp.com/comments?postId=${movieId}`,
+        };
+
+        try {
+            const response = await axios.request(options);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    }
+
+    async createMovieComment(body: { body: string; postId: string; author: string }) {
+        const options = {
+            method: 'POST',
+            url: `https://json-api-diqosh-cf992770784d.herokuapp.com/comments/`,
+            data: body,
+        };
+
+        try {
+            const response = await axios.request(options);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    }
+
+    async deleteMovieComment(id: number) {
+        const options = {
+            method: 'DELETE',
+            url: `https://json-api-diqosh-cf992770784d.herokuapp.com/comments/${id}`,
+        };
+
+        try {
+            const response = await axios.request(options);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
     }
 }
