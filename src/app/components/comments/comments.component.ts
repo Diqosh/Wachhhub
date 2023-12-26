@@ -25,7 +25,7 @@ export class CommentsComponent {
         const id = location.pathname.split('/').pop() || 'tt0000081';
 
         this.movieService.getMovieComments(id).then((data: any) => {
-            if (data && data?.length > 0) this.comments = data;
+            if (data) this.comments = data;
         });
     }
 

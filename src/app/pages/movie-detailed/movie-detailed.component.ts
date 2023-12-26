@@ -30,6 +30,15 @@ export class MovieDetailedComponent {
         this.message.info(info);
     }
 
+    fetchFavoriteMovies() {
+        this.movieService.getMyFavoriteMovies().then((res) => {
+            const favs = res?.filter((item: any) => item?.id === this.movie?.id);
+
+            if (favs?.length > 0) this.isFavourite = true;
+            else this.isFavourite = false;
+        });
+    }
+
     fetchMovie() {
         const id = location.pathname.split('/').pop() || 'tt0000081';
 
@@ -43,7 +52,8 @@ export class MovieDetailedComponent {
             })
             .catch((error) => {
                 // Handle the error
-            });
+            })
+            .finally(() => this.fetchFavoriteMovies());
     }
 
     fetchPost() {

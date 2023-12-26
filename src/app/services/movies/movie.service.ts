@@ -132,4 +132,21 @@ export class MovieService {
             throw error;
         }
     }
+
+    async getMyFavoriteMovies() {
+        const options = {
+            method: 'GET',
+            url: `https://json-api-diqosh-cf992770784d.herokuapp.com/users/${
+                JSON.parse(localStorage.getItem('user') || '')?.id || 1
+            }`,
+        };
+
+        try {
+            const response = await axios.request(options);
+            return response.data.favorites;
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    }
 }
