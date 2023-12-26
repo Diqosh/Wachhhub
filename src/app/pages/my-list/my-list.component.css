@@ -1,0 +1,55 @@
+.fav-container {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.fav-container__card {
+    border-radius: 16px;
+    background-color: #f4f4f4;
+    padding: 16px;
+    width: 250px;
+    height: 355px;
+}
+
+.fav-container__card:hover {
+    transform: scale(1.03);
+}
+
+.fav-container__h3 {
+    color: #000;
+}
+
+.fav-container__card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    color: white;
+}
+
+.asdasdasdasd {
+    color: red;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+.asdasdasdasd:hover {
+    font-weight: 600;
+    text-decoration: line-through;
+}
+
+.fav-nodata {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.fav-nodata__text {
+    font-size: 48px;
+}
+
+.fav-nodata__link {
+    color: purple;
+    text-decoration: underline;
+    text-align: center;
+}
