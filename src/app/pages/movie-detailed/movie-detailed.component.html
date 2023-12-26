@@ -9,7 +9,10 @@
     </div>
 
     <div class="movie-poster">
-        <img [src]="movie.primaryImage?.url" alt="{{ movie.titleText.text }}" />
+        <div class="movie-poster__image__list">
+            <img [src]="movie.primaryImage?.url" alt="{{ movie.titleText.text }}" />
+            <span class="movie-poster__image__heart" [class.isFavourite]="isFavourite" (click)="addToMyList()">♥</span>
+        </div>
         <div class="interaction-buttons">
             <p>{{ movie.likes }}</p>
             <button class="like-button" (click)="likePost()">like</button>

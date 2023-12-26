@@ -10,6 +10,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 })
 export class MovieDetailedComponent {
     movie!: any;
+    isFavourite = false;
 
     constructor(
         private movieService: MovieService,
@@ -120,5 +121,16 @@ export class MovieDetailedComponent {
 
         // Open the URL
         window.open(telegramUrl, '_blank');
+    }
+
+    addToMyList() {
+        const { id, titleText, primaryImage } = this.movie;
+        const author = JSON.parse(localStorage.getItem('user') || '')?.name || 'dimash1234';
+
+        if (!this.isFavourite)
+            this.movieService
+                .favMovie({ id, userName: author, title: titleText.text, imgUrl: primaryImage.url })
+                .then(() => (this.isFavourite = true));
+        else this.movieService.unfavMovie({ id, userName: author }).then(() => (this.isFavourite = false));
     }
 }

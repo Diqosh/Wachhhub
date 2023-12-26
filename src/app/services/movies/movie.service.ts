@@ -96,4 +96,40 @@ export class MovieService {
             throw error;
         }
     }
+
+    async favMovie({ id, userName, title, imgUrl }: { id: number; userName: string; title: string; imgUrl: string }) {
+        const options = {
+            method: 'POST',
+            url: `https://json-api-diqosh-cf992770784d.herokuapp.com/posts/${id}/favorite`,
+            data: {
+                username: userName,
+                title,
+                img_url: imgUrl,
+            },
+        };
+
+        try {
+            const response = await axios.request(options);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    }
+
+    async unfavMovie({ id, userName }: { id: number; userName: string }) {
+        const options = {
+            method: 'DELETE',
+            url: `https://json-api-diqosh-cf992770784d.herokuapp.com/posts/${id}/unfavorite`,
+            data: { username: userName },
+        };
+
+        try {
+            const response = await axios.request(options);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    }
 }
