@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MovieService } from 'src/app/services/movies/movie.service';
 
@@ -11,6 +11,7 @@ export class CommentsComponent {
     comments: any = [];
     commentInput: string = '';
     authorNickname: string = '';
+    hideCommentArrow: boolean = false;
 
     constructor(private movieService: MovieService) {}
 
@@ -49,5 +50,15 @@ export class CommentsComponent {
 
     deleteComment(id: number) {
         this.movieService.deleteMovieComment(id).then(() => this.fetchMovieComments());
+    }
+
+    @HostListener('window:scroll', ['$event'])
+    onScroll(event: any) {
+        const scrollThreshold = 200;
+        this.hideCommentArrow = window.scrollY > scrollThreshold;
+    }
+
+    scrollToElement($element: any): void {
+        $element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
     }
 }
